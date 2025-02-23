@@ -4,18 +4,14 @@ function Contact({ contact, onDelete }) {
   return (
     <div className={styles.contact}>
       <div className={styles.leftSection}>
-        <img
-          src="/vite-project/public/icons/person.svg"
-          alt="User Icon"
-          className={styles.icon}
-        />
+        <img src="/icons/person.svg" alt="User Icon" className={styles.icon} />
         <p className={styles.name}>{contact.name}</p>
       </div>
 
       <div className={styles.rightSection}>
         <div className={styles.phoneInfo}>
           <img
-            src="/vite-project/public/icons/phone.svg"
+            src="/icons/phone.svg"
             alt="Phone Icon"
             className={styles.icon}
           />

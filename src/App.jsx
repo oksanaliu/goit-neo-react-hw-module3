@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import ContactForm from './components/ContactForm/ContactForm';
 import SearchBox from './components/SearchBox/SearchBox';
 import ContactList from './components/ContactList/ContactList';
-import styles from './styles.css';
+import styles from './App.module.css';
 
 function App() {
   const [contacts, setContacts] = useState(() => {

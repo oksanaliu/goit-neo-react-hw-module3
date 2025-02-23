@@ -4,12 +4,12 @@ import styles from './ContactForm.module.css';
 
 const validationSchema = Yup.object({
   name: Yup.string()
-    .min(3, 'Мінімум 3 символи')
-    .max(50, 'Максимум 50 символів')
-    .required('Обов’язкове поле'),
+    .min(3, 'Too short!')
+    .max(50, 'Too long!')
+    .required('Required'),
   number: Yup.string()
-    .matches(/^\d{3}-\d{2}-\d{2}$/, 'Формат: XXX-XX-XX')
-    .required('Обов’язкове поле'),
+    .matches(/^\d{3}-\d{2}-\d{2}$/, 'Format: XXX-XX-XX')
+    .required('Required'),
 });
 
 function ContactForm({ onAdd }) {
@@ -22,17 +22,25 @@ function ContactForm({ onAdd }) {
         resetForm();
       }}
     >
-      <Form className={styles.form}>
-        <label>Name</label>
-        <Field type="text" name="name" />
-        <ErrorMessage name="name" component="div" className={styles.error} />
+      {({ errors, touched }) => (
+        <Form className={styles.form}>
+          <label className={styles.label}>Name</label>
+          <Field type="text" name="name" className={styles.inputContact} />
+          {touched.name && errors.name && (
+            <div className={styles.error}>{errors.name}</div>
+          )}
 
-        <label>Number</label>
-        <Field type="text" name="number" />
-        <ErrorMessage name="number" component="div" className={styles.error} />
+          <label className={styles.label}>Number</label>
+          <Field type="text" name="number" className={styles.inputContact} />
+          {touched.number && errors.number && (
+            <div className={styles.error}>{errors.number}</div>
+          )}
 
-        <button type="submit">Add contact</button>
-      </Form>
+          <button type="submit" className={styles.button}>
+            Add contact
+          </button>
+        </Form>
+      )}
     </Formik>
   );
 }

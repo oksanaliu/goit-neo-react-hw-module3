@@ -2,13 +2,16 @@ import styles from './SearchBox.module.css';
 
 function SearchBox({ value, onChange }) {
   return (
-    <input
-      className={styles.input}
-      type="text"
-      placeholder="Find contacts by name"
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-    />
+    <div className={styles.searchBox}>
+      <label className={styles.label}>Find contacts by name</label>
+      <input
+        className={styles.inputSerch}
+        type="text"
+        placeholder="Enter name"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      />
+    </div>
   );
 }
 

@@ -47,3 +47,9 @@ button {
 button:hover {
     background-color: #bbbaba;
 }
+
+@media (max-width: 600px) {
+    .form {
+        max-width: 90%;
+    }
+}

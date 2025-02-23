@@ -24,17 +24,15 @@
 }
 
 @media (max-width: 1024px) {
-
     .listItem {
-        flex: 1 1 calc((100vw - 20px) / 2);
-        max-width: calc((100vw - 20px) / 2);
+        flex: 1 1 calc((100vw - 40px) / 2);
+        max-width: 300px;
     }
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 600px) {
     .listItem {
-        flex: 1 1 calc(100vw - 20px);
-        max-width: calc(100vw - 20px);
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 }
